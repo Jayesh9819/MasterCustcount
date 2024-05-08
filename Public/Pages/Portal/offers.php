@@ -86,8 +86,6 @@
                     $id = htmlspecialchars($row["id"]);
 
                     $imagePath = "../uploads/" . $image; // Adjust the path as needed
-
-                    // Display the data in a Bootstrap card
                     echo "
                     <div class='col-md-4'>
                         <div class='card'>
