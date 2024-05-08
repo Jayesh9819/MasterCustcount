@@ -204,6 +204,38 @@
             object-fit: cover;
             /* Ensures the image covers the box, might crop */
         }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown-image {
+            width: 50px;
+            height: auto;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
     </style>
 
 
@@ -321,19 +353,19 @@
                                 Select Image
                             </button>
                             <div class="dropdown-menu" aria-labelledby="imageDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="#" data-image-src="../assets/images/wallpape/1.jpeg">
                                     <img src="../assets/images/wallpape/1.jpeg" alt="Image 1" class="dropdown-image">
                                     Image 1
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="#" data-image-src="../assets/images/wallpape/2.jpg">
                                     <img src="../assets/images/wallpape/2.jpg" alt="Image 2" class="dropdown-image">
                                     Image 2
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="#" data-image-src="../assets/images/wallpape/3.jpeg">
                                     <img src="../assets/images/wallpape/3.jpeg" alt="Image 3" class="dropdown-image">
                                     Image 3
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="#" data-image-src="../assets/images/wallpape/4.jpeg">
                                     <img src="../assets/images/wallpape/4.jpeg" alt="Image 4" class="dropdown-image">
                                     Image 4
                                 </a>
@@ -390,6 +422,19 @@
     }
 
     ?>
+    <script>$(document).ready(function(){
+    $('.dropdown-toggle').click(function(){
+        $('.dropdown-menu').toggle();
+    });
+
+    $('.dropdown-item').click(function(event){
+        event.preventDefault(); // Prevent the link from actually navigating
+        var imgSrc = $(this).data('image-src');
+        $('#imageDropdown').html('<img src="' + imgSrc + '" alt="Selected Image" class="dropdown-image">');
+        $('.dropdown-menu').hide();
+    });
+});
+</script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Live Customizer end -->
