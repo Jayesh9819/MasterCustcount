@@ -279,43 +279,75 @@
                         <button type="submit" class="btn btn-primary">Upload Picture</button>
                     </form>
                     <!-- Enhanced Wallpaper Selector -->
-                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="settings-form">
-                        <!-- Wallpaper Selection and Custom Upload -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="image-box" data-number="1">
-                                        <img src="../assets/images/wallpape/1.jpeg" alt="Image 1" class="img-fluid">
-                                        <h6>Image 1</h6>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="image-box" data-number="2">
-                                        <img src="../assets/images/wallpape/2.jpg" alt="Image 2" class="img-fluid">
-                                        <h6>Image 2</h6>
-
-                                    </div>
+                    <!-- Wallpaper Selection and Custom Upload -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="image-box" data-number="1">
+                                    <img src="../assets/images/wallpape/1.jpeg" alt="Image 1" class="img-fluid">
+                                    <h6>Image 1</h6>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="image-box" data-number="3">
-                                        <img src="../assets/images/wallpape/3.jpeg" alt="Image 3" class="img-fluid">
-                                        <h6>Image 3</h6>
+                            <div class="col-md-6">
+                                <div class="image-box" data-number="2">
+                                    <img src="../assets/images/wallpape/2.jpg" alt="Image 2" class="img-fluid">
+                                    <h6>Image 2</h6>
 
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="image-box" data-number="4">
-                                        <img src="../assets/images/wallpape/4.jpeg" alt="Image 4" class="img-fluid">
-                                        <h6>Image 4</h6>
-
-                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="image-box" data-number="3">
+                                    <img src="../assets/images/wallpape/3.jpeg" alt="Image 3" class="img-fluid">
+                                    <h6>Image 3</h6>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="image-box" data-number="4">
+                                    <img src="../assets/images/wallpape/4.jpeg" alt="Image 4" class="img-fluid">
+                                    <h6>Image 4</h6>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="settings-form">
 
 
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="imageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select Image
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="imageDropdown">
+                                <a class="dropdown-item" href="#" data-image="../assets/images/wallpape/1.jpeg">
+                                    Image 1
+                                </a>
+                                <a class="dropdown-item" href="#" data-image="../assets/images/wallpape/2.jpg">
+                                    Image 2
+                                </a>
+                                <a class="dropdown-item" href="#" data-image="../assets/images/wallpape/3.jpeg">
+                                    Image 3
+                                </a>
+                                <a class="dropdown-item" href="#" data-image="../assets/images/wallpape/4.jpeg">
+                                    Image 4
+                                </a>
+                            </div>
+                        </div>
+                        <div id="selectedImage"></div>
+
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script>
+                            $(document).ready(function() {
+                                $('.dropdown-item').click(function() {
+                                    var imageSrc = $(this).data('image');
+                                    var text = $(this).text();
+                                    $('#imageDropdown').html(text);
+                                    $('#selectedImage').html('<img src="' + imageSrc + '" alt="Selected Image" class="selected-image">');
+                                });
+                            });
+                        </script>
 
                         <!-- Notification Tone Selection and Custom Upload -->
                         <div class="form-group">
