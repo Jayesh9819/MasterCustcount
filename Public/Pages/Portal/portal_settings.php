@@ -321,33 +321,24 @@
                                 Select Image
                             </button>
                             <div class="dropdown-menu" aria-labelledby="imageDropdown">
-                                <a class="dropdown-item" href="#" data-image="../assets/images/wallpape/1.jpeg">
+                                <a class="dropdown-item" href="#">
+                                    <img src="../assets/images/wallpape/1.jpeg" alt="Image 1" class="dropdown-image">
                                     Image 1
                                 </a>
-                                <a class="dropdown-item" href="#" data-image="../assets/images/wallpape/2.jpg">
+                                <a class="dropdown-item" href="#">
+                                    <img src="../assets/images/wallpape/2.jpg" alt="Image 2" class="dropdown-image">
                                     Image 2
                                 </a>
-                                <a class="dropdown-item" href="#" data-image="../assets/images/wallpape/3.jpeg">
+                                <a class="dropdown-item" href="#">
+                                    <img src="../assets/images/wallpape/3.jpeg" alt="Image 3" class="dropdown-image">
                                     Image 3
                                 </a>
-                                <a class="dropdown-item" href="#" data-image="../assets/images/wallpape/4.jpeg">
+                                <a class="dropdown-item" href="#">
+                                    <img src="../assets/images/wallpape/4.jpeg" alt="Image 4" class="dropdown-image">
                                     Image 4
                                 </a>
                             </div>
                         </div>
-                        <div id="selectedImage"></div>
-
-                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                        <script>
-                            $(document).ready(function() {
-                                $('.dropdown-item').click(function() {
-                                    var imageSrc = $(this).data('image');
-                                    var text = $(this).text();
-                                    $('#imageDropdown').html(text);
-                                    $('#selectedImage').html('<img src="' + imageSrc + '" alt="Selected Image" class="selected-image">');
-                                });
-                            });
-                        </script>
 
                         <!-- Notification Tone Selection and Custom Upload -->
                         <div class="form-group">
