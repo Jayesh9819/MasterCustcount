@@ -33,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['timezone'] = $row['timezone'];
                     $_SESSION['branch'] = $row['branchname'];
                     $_SESSION['branch1'] = $row['branchname'];
-
+                    $_SESSION['sound'] = $row['csound'];
+                    $_SESSION['wallpaper'] = $row['cwall'];
                     $_SESSION['pp'] = $row['p_p'];
 
 

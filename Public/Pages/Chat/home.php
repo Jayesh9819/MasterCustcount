@@ -158,7 +158,7 @@
 		/*message_status*/
 		/* Custom CSS styles */
 		.chat-box {
-			background-image: url("../uploads/chat-5.avif");
+			background-image: url("../uploads/<?php echo $_SESSION['wallpaper']?>");
 			height: 87%;
 			width: 100%;
 
