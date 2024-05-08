@@ -286,11 +286,14 @@
                                 <div class="col-md-6">
                                     <div class="image-box" data-number="1">
                                         <img src="../assets/images/wallpape/1.jpeg" alt="Image 1" class="img-fluid">
+                                        <h6>Image 1</h6>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="image-box" data-number="2">
                                         <img src="../assets/images/wallpape/2.jpg" alt="Image 2" class="img-fluid">
+                                        <h6>Image 2</h6>
+
                                     </div>
                                 </div>
                             </div>
@@ -298,11 +301,15 @@
                                 <div class="col-md-6">
                                     <div class="image-box" data-number="3">
                                         <img src="../assets/images/wallpape/3.jpeg" alt="Image 3" class="img-fluid">
+                                        <h6>Image 3</h6>
+
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="image-box" data-number="4">
                                         <img src="../assets/images/wallpape/4.jpeg" alt="Image 4" class="img-fluid">
+                                        <h6>Image 4</h6>
+
                                     </div>
                                 </div>
                             </div>
