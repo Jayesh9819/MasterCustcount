@@ -281,20 +281,52 @@
                     <!-- Enhanced Wallpaper Selector -->
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="settings-form">
                         <!-- Wallpaper Selection and Custom Upload -->
+                        <style>
+                            .container {
+                                display: grid;
+                                grid-template-columns: repeat(2, 1fr);
+                                gap: 20px;
+                            }
+
+                            .image-box {
+                                position: relative;
+                            }
+
+                            .image-box img {
+                                width: 100%;
+                                height: auto;
+                            }
+
+                            .image-box::before {
+                                content: attr(data-number);
+                                position: absolute;
+                                top: 10px;
+                                left: 10px;
+                                font-size: 20px;
+                                font-weight: bold;
+                                color: white;
+                                background-color: rgba(0, 0, 0, 0.5);
+                                padding: 5px;
+                                border-radius: 5px;
+                            }
+                        </style>
+
                         <div class="container">
-                            <div class="image-box">
-                                <img src="../assets/images/wallpape/1.jpeg"  alt="Image 1">
+                            <div class="image-box" data-number="1">
+                                <img src="../assets/images/wallpape/1.jpeg" alt="Image 1">
                             </div>
-                            <div class="image-box">
+                            <div class="image-box" data-number="2">
                                 <img src="../assets/images/wallpape/2.jpg" alt="Image 2">
                             </div>
-                            <div class="image-box">
+                            <div class="image-box" data-number="3">
                                 <img src="../assets/images/wallpape/3.jpeg" alt="Image 3">
                             </div>
-                            <div class="image-box">
+                            <div class="image-box" data-number="4">
                                 <img src="../assets/images/wallpape/4.jpeg" alt="Image 4">
                             </div>
                         </div>
+
+
 
                         <!-- Notification Tone Selection and Custom Upload -->
                         <div class="form-group">
