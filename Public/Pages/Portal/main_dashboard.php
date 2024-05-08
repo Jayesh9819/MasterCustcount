@@ -107,7 +107,7 @@ if (isset($_GET['start_time']) && isset($_GET['end_time'])) {
     if ($role == 'Admin') {
         $rechargeQuery = "SELECT SUM(recharge) AS total_recharge FROM transaction WHERE type='Debit'  AND  created_at BETWEEN '$shiftStart' AND '$shiftEnd'";
         $redeemQuery = "SELECT SUM(redeem) AS total_redeem FROM transaction WHERE type='Credit' AND redeem_status = 1 AND cashout_status = 1 AND created_at BETWEEN '$shiftStart' AND '$shiftEnd' ";
-        $activeUsersQuery = "SELECT COUNT(*) AS active_users FROM user WHERE role='User' AND status = 1 AND last_seen=NOW()";
+        $activeUsersQuery = "SELECT COUNT(*) AS active_users FROM user WHERE status = 1 AND last_seen >= DATE_SUB(NOW(), INTERVAL 1 MINUTE);";
     } elseif ($role == 'User') {
         $rechargeQuery = "SELECT SUM(recharge) AS total_recharge FROM transaction WHERE type='Debit' AND  username='$username'  AND created_at BETWEEN '$shiftStart' AND '$shiftEnd'";
         $redeemQuery = "SELECT SUM(redeem) AS total_redeem FROM transaction WHERE type='Credit' AND username='$username' AND redeem_status = 1 AND cashout_status = 1 AND created_at BETWEEN '$shiftStart' AND '$shiftEnd'";
